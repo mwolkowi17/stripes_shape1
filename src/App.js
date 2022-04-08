@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense} from 'react'
+import { Canvas} from '@react-three/fiber'
+import { OrbitControls, Html } from '@react-three/drei'
+import { ModelD } from './Model1'
 
-function App() {
+
+
+
+
+export default function App() {
+  function Loader() {
+    return <Html center style={{ color: 'black' }}>loading...</Html>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+    <Canvas camera={{ fov: 75, near: 0.1, far: 80, position: [-10, 6, 30] }}>
+      <OrbitControls
+        maxPolarAngle={Math.PI / 2}
+        maxDistance={40}
+      />
+      <Suspense fallback={<Loader />}>
+        <ambientLight />
+       <ModelD/>
+      </Suspense>
+    </Canvas>
+  )
+}
