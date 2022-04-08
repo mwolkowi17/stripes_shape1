@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 
 export function ModelD(props) {
   const group = useRef()
-  const { nodes } = useGLTF('/deform_stripes.gltf')
+  const { nodes } = useGLTF('deform_stripes2.gltf')
   const [hovered, setHovered] = useState(false)
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto'
@@ -12,9 +12,9 @@ export function ModelD(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <primitive castShadow receiveShadow object={nodes.Plane}
-        //scale={nodes.plane.scale}
-        //translateOnAxis={nodes.plane.translation}
-       // rotation={nodes.plane.rotation}
+        scale={nodes.Plane.scale}
+        translateOnAxis={nodes.Plane.translation}
+        rotation={nodes.Plane.rotation}
       /* onClick={() => console.log('clicked')}
         onPointerOver={() => setHovered(true)}
         onPointerOut={() => setHovered(false)}*/
@@ -25,4 +25,4 @@ export function ModelD(props) {
   )
 }
 
-useGLTF.preload('/deform_stripes.gltf')
+useGLTF.preload('deform_stripes2.gltf')
