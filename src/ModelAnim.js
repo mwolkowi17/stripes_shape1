@@ -9,7 +9,7 @@ import { useEffect, useRef } from 'react';
 export function ModelAnim(props) {
 
   const mixer = useRef();
-  const gltf = useLoader(GLTFLoader, '/test2.gltf')
+  const gltf = useLoader(GLTFLoader, 'test2.gltf')
   //animatio segment start
   useEffect(() => {
     if (gltf) {
