@@ -3,7 +3,7 @@ import { useGLTF } from '@react-three/drei'
 
 export function ModelD(props) {
   const group = useRef()
-  const { nodes } = useGLTF('deform_strips6_3.gltf')
+  const { nodes } = useGLTF('deform_strips6_9.gltf')
   const [hovered, setHovered] = useState(false)
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto'
@@ -25,4 +25,4 @@ export function ModelD(props) {
   )
 }
 
-useGLTF.preload('deform_strips6_3.gltf')
+useGLTF.preload('deform_strips6_9.gltf')

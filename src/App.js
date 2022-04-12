@@ -23,7 +23,7 @@ export default function App() {
       <Suspense fallback={<Loader />}>
        {/*<ambientLight />*/}
         <pointLight position={[10, 10, 10]} /> 
-      
+        <pointLight position={[-10, 10, 10]} /> 
        <ModelD rotation={[Math.PI/0.86,0,0]} scale={[4,4,4]}/>
      
         {/*<ModelAnim rotation={[Math.PI/2,0,0]} />*/}
