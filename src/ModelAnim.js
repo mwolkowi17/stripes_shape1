@@ -18,8 +18,8 @@ export function ModelAnim(props) {
       mixer.current = new THREE.AnimationMixer(gltf.scene)
       const action = mixer.current.clipAction(gltf.animations[0])
       //console.log(gltf.animations)
-      action.play()
-     /*
+      //action.play()
+     
       if(startPlay===true){
         action.play()
         if(mixer.current.time>2){
@@ -27,7 +27,7 @@ export function ModelAnim(props) {
           console.log('stop')
         }
         }
-       */
+       
         
       
     }
