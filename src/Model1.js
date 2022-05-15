@@ -30,9 +30,9 @@ export function ModelD(props) {
         translateOnAxis={nodes.Plane.translation}
         rotation={nodes.Plane.rotation}
 
-      /* onClick={() => console.log('clicked')}
+        onClick={() => console.log('clicked')}
         onPointerOver={() => setHovered(true)}
-        onPointerOut={() => setHovered(false)}*/
+        onPointerOut={() => setHovered(false)}
       />
       <primitive castShadow receiveShadow object={nodes.Plane2}
         scale={nodes.Plane.scale}
