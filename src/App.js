@@ -2,8 +2,6 @@ import React, { Suspense} from 'react'
 import { Canvas} from '@react-three/fiber'
 import { OrbitControls, Html } from '@react-three/drei'
 import { ModelD } from './Model1'
-import { ModelAnim } from './ModelAnim'
-
 
 
 
@@ -15,7 +13,7 @@ export default function App() {
 
   return (
 
-    <Canvas camera={{ fov: 75, near: 0.1, far: 80, /*position: [0, 25, 25]*/ position: [0, 2, 0] }}>
+    <Canvas camera={{ fov: 75, near: 0.1, far: 80, /*position: [0, 25, 25]*/ position: [0, -1, 4] }}>
       <OrbitControls
         maxPolarAngle={Math.PI / 2}
         maxDistance={40}

@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useGLTF,useAnimations } from '@react-three/drei'
-import * as THREE from 'three'
 import { useFrame } from '@react-three/fiber'
 
 export function ModelD(props) {
@@ -18,7 +17,7 @@ export function ModelD(props) {
    actions.Key4.play()
    actions.Key5.play()
    actions.Key6.play()
-  }, [hovered,mixer])
+  }, [hovered,mixer,actions])
 
 
   useFrame((state, delta) => {
