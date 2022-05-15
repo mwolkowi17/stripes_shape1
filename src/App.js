@@ -15,7 +15,7 @@ export default function App() {
 
   return (
 
-    <Canvas camera={{ fov: 75, near: 0.1, far: 80, /*position: [0, 25, 25]*/ position: [0, 2, 25] }}>
+    <Canvas camera={{ fov: 75, near: 0.1, far: 80, /*position: [0, 25, 25]*/ position: [0, 2, 0] }}>
       <OrbitControls
         maxPolarAngle={Math.PI / 2}
         maxDistance={40}
@@ -24,9 +24,9 @@ export default function App() {
        {/*<ambientLight />*/}
         <pointLight position={[10, 10, 10]} /> 
         <pointLight position={[-10, 10, 10]} /> 
-       {/*<ModelD rotation={[Math.PI/0.86,0,0]} scale={[4,4,4]}/>*/}
+       <ModelD rotation={[Math.PI/0.86,0,0]} scale={[4,4,4]}/>
      
-        <ModelAnim rotation={[Math.PI/2,0,0]}  />
+       {/* <ModelAnim rotation={[Math.PI/2,0,0]}  />  */}
       </Suspense>
     </Canvas>
   )

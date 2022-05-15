@@ -10,7 +10,7 @@ import { useEffect, useRef, useState } from 'react';
 export function ModelAnim(props) {
 
   const mixer = useRef();
-  const gltf = useLoader(GLTFLoader, 'deform_strips6_10anim.gltf')
+  const gltf = useLoader(GLTFLoader, 'deform1.gltf')
 
   const [startPlay, setStartPlay] = useState(false)
   const [ifStarted, setIfStarted] = useState(false)
@@ -22,11 +22,21 @@ export function ModelAnim(props) {
   if (gltf) {
     mixer.current = new THREE.AnimationMixer(gltf.scene)
     const action = mixer.current.clipAction(gltf.animations[0])
+    const action2 = mixer.current.clipAction(gltf.animations[1])
+    const action3 = mixer.current.clipAction(gltf.animations[2])
+    const action4 = mixer.current.clipAction(gltf.animations[3])
+    const action5 = mixer.current.clipAction(gltf.animations[4])
+    const action6 = mixer.current.clipAction(gltf.animations[5])
     ifPlayed.current = false
 
     if (startPlay) {
     
         action.play();
+        action2.play();
+        action3.play();
+        action4.play();
+        action5.play();
+        action6.play();
         setTimeout(() => {
         action.stop();
         setStartPlay(false)
@@ -46,7 +56,7 @@ export function ModelAnim(props) {
   return (
     <>
       <OrbitControls />
-      <primitive object={gltf.scene} dispose={null} onPointerOver={(e) => setStartPlay(true)}  />
+      <primitive object={gltf.scene.nodes[4]} dispose={null} onPointerOver={(e) => setStartPlay(true)}  />
     </>
   )
 }
